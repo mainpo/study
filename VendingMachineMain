@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class VendingMachineMain {
+    public static void main(String[] args) {
+        int money = 0, select;
+        String yesOrNo = "N", exit = "N";
+
+        Scanner sc = new Scanner(System.in);
+        VendingMachine vendingMachine = new VendingMachine();
+
+        do {
+            do {
+                System.out.print("얼마를 넣으시겠습니까? ");
+                money = sc.nextInt();
+
+                vendingMachine.insertMoney(money);
+                vendingMachine.displayMoney();
+
+                System.out.print("돈을 추가 투입하시겠습니까? (Y / N): ");
+                yesOrNo = sc.next();
+                System.out.println();
+            } while (!yesOrNo.equalsIgnoreCase("N"));
+            do {
+                vendingMachine.drinkList();
+
+                System.out.println("물품 선택");
+                select = sc.nextInt();
+
+                vendingMachine.buyDrink(select);
+
+                System.out.println("재주문 하시겠습니까? (Y / N) ");
+                yesOrNo = sc.next();
+            } while (!yesOrNo.equalsIgnoreCase("N"));
+        } while (!yesOrNo.equalsIgnoreCase("N"));
+
+        System.out.println("맛있게 드십시오.");
+    }
+}
