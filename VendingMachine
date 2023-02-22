@@ -1,0 +1,53 @@
+public class VendingMachine {
+    private int money=0;
+    private int sel;
+    private int price[] = {500,800,1000,1500,1500,2000};
+
+
+    public void insertMoney(int money) {
+        System.out.println(money+"원 넣으셨습니다.");
+        this.money+=money;
+    }
+    public void displayMoney(){
+        System.out.println("현재잔액 "+money+"원 입니다.");
+    }
+
+
+    public void buyDrink(int sel){
+        switch (sel){
+            case 1:
+                System.out.println("생수 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            case 2:
+                System.out.println("탄산수 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            case 3:
+                System.out.println("밀키스 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            case 4:
+                System.out.println("콜라 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            case 5:
+                System.out.println("사이다 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            case 6:
+                System.out.println("맥주 선택하셨습니다.");
+                this.money-=(money*price[sel]);
+                break;
+            default:
+                System.out.println("잘못 선택하셨습니다.");
+                break;
+        }
+    }
+    public void drinkList(){
+        System.out.println("물품 리스트 및 가격\n1.생수(500원)\t2.탄산수(800원)\t3.밀키스(1000원)\n4.콜라(1500원)\t5.사이다(1500원)\t6.맥주(2000원)");
+    }
+    public void drinkCost(){
+
+    }
+}
